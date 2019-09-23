@@ -7,6 +7,7 @@ var config = require('../config');
 function checkRepo(githubId, callback){
   let url = config.githubRawPrefix + githubId + config.githubSuffix;
   let result = {};
+  result.githubWebsite = url + '/master/docs/index.html';
   result.githubUrl = config.githubPrefix + githubId;
   result.githubId = githubId;
   result.repoReadMe = url + '/master/README.md';
@@ -60,6 +61,24 @@ function checkRepo(githubId, callback){
           result.repoLecture2Result = false;
           result.repoLecture2repoBody = null;
           result.repoLecture2repoCode = 'N.A';
+        }
+        resolve();
+      });
+    });
+  }).then(function(){
+    return new Promise(function(resolve, reject){
+      console.log('Checking ' + result.githubWebsite);
+      request({
+        url: result.githubWebsite
+      }, function(error, response, body){
+        if(!error){
+          if(response.statusCode == 200){
+            result.repoWebsiteResult = true;
+          }else{
+            result.repoWebsiteResult = false;
+          }
+        }else{
+          result.repoWebsiteResult = false;
         }
         resolve();
       });

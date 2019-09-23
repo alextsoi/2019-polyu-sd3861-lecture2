@@ -13,6 +13,8 @@ block content
         th(scope="col") README.md result
         th(scope="col") lecture2.md link
         th(scope="col") lecture2.md result
+        th(scope="col") website link
+        th(scope="col") website result
     tbody
       each result in results
         tr
@@ -33,6 +35,13 @@ block content
             a(href=result.repoLecture2, class="badge badge-info",target="_blank") Link
           td
             if(result.repoLecture2Result)
+              span(class="badge badge-success") Success
+            else
+              span(class="badge badge-danger") Failure
+          td
+            a(href=result.githubWebsite, class="badge badge-info",target="_blank") Link
+          td
+            if(result.repoWebsiteResult)
               span(class="badge badge-success") Success
             else
               span(class="badge badge-danger") Failure
