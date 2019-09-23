@@ -1,6 +1,7 @@
 module.exports = {
     githubIds: [
         "alextsoi",
+        "derone",
         "03win",
         "CarmenCCy",
         "E3cho",
@@ -33,6 +34,8 @@ module.exports = {
         "youngbeen1002",
         "youngbeen1002",
         "yumicornnn",
+        "Skylettwong",
+        "chuntx"
     ],
     "githubPrefix": "https://github.com/",
     "githubSuffix": "/2019-polyu-sd3861-lecture2",

@@ -1,3 +1,1 @@
 Lecture 2
-
-
