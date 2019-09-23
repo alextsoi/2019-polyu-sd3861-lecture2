@@ -22,20 +22,28 @@ function checkRepo(githubId, callback){
             result.repoReadMeResult = true;
             result.repoReadMeBody = body;
             result.repoReadMeCode = response.statusCode;
+            result.repoReadMeLabel = 'success';
+            result.repoReadMeText = 'Success';
           }else{
             result.repoReadMeResult = false;
             result.repoReadMeBody = body;
             result.repoReadMeCode = response.statusCode;
+            result.repoReadMeLabel = 'warning';
+            result.repoReadMeText = 'Partial';
           }
         }else{
           result.repoReadMeResult = false;
           result.repoReadMeBody = null;
           result.repoReadMeCode = response.statusCode;
+          result.repoReadMeLabel = 'danger';
+          result.repoReadMeText = 'Oops';
         }
       }else{
         result.repoReadMeResult = false;
         result.repoReadMeBody = null;
         result.repoReadMeCode = 'N.A';
+        result.repoReadMeLabel = 'danger';
+        result.repoReadMeText = 'Oops';
       }
       resolve();
     });
