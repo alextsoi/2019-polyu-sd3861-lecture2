@@ -1,0 +1,8 @@
+module.exports = {
+    githubIds: [
+        // in array format
+    ],
+    "githubPrefix": "https://github.com/",
+    "githubSuffix": "/2019-polyu-sd3861-lecture2",
+    "githubRawPrefix": "https://raw.githubusercontent.com/"
+};

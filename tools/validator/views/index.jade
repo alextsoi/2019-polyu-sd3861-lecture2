@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  table.table
+    thead
+      tr
+        th(scope="col") Github ID
+        th(scope="col") README.md status code
+        th(scope="col") README.md content
+        th(scope="col") lecture2.md status code
+        th(scope="col") lecture2.md content
+        th(scope="col") README.md link
+        th(scope="col") README.md result
+        th(scope="col") lecture2.md link
+        th(scope="col") lecture2.md result
+    tbody
+      each result in results
+        tr
+          th(scope="row")
+            a(href=result.githubUrl,target="_blank")=result.githubId
+          td=result.repoReadMeCode
+          td=result.repoReadMeBody
+          td=result.repoLecture2repoCode
+          td=result.repoLecture2repoBody
+          td
+            a(href=result.repoReadMe, class="badge badge-info",target="_blank") Link
+          td
+            if(result.repoReadMeResult)
+              span(class="badge badge-success") Success
+            else
+              span(class="badge badge-danger") Failure
+          td
+            a(href=result.repoLecture2, class="badge badge-info",target="_blank") Link
+          td
+            if(result.repoLecture2Result)
+              span(class="badge badge-success") Success
+            else
+              span(class="badge badge-danger") Failure
