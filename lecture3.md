@@ -1,1 +1,1 @@
-This is for lecture
+This is for lecture 3
